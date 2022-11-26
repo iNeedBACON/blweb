@@ -1,47 +1,93 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-body{
-    background-color:azure;
+
+:root {
+    --main-color: #151515;
+    --second-color: #eaeaea;
+    --third-color: #808080;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #151515;
+    font-family: "Montserrat", sans-serif;
 }
-.logo{
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 7rem;
+    background-color: var(--main-color);
+    z-index: 1;
+    transition: 0.5s;
+}
+
+    header.scroll {
+        position: fixed;
+        top: -7rem;
+        left: 0;
+        width: 100%;
+        height: 7rem;
+        background-color: var(--main-color);
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+.logos {
+    position: absolute;
+    left: 15%;
+    bottom: 1rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--second-color);
+}
+
+.logo {
+    position: absolute;
+    left: 10%;
+    bottom: 0.5rem;
     max-height: 100px;
     cursor: pointer;
 }
-li, a, button{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
-    text-decoration: none;
+
+nav {
+    position: absolute;
+    left: 30%;
+    bottom: 1rem;
+    width: 60%;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    
-}
 
-.nav__links{
-    list-style: none;
-}
+    nav ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
 
-.nav__links li{
-    display: inline-block;
-    padding: 0px 20px;
-}
-.nav__links li a{
-    transition: all 0.3s ease 0s;
-}
-.nav__links li a:hover{
-    color: #edf0f1
-}
+        nav ul li a {
+            text-decoration: none;
+            color: var(--second-color);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+            nav ul li a::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 1px;
+                background: var(--second-color);
+                transition: 0.3s;
+            }
+
+            nav ul li a:hover::after {
+                width: 100%;
+                transition: 0.3s;
+            }
+
+
 
 button {
     padding: 9px 25px;
@@ -50,8 +96,93 @@ button {
     transition: all 0.3s ease 0s;
     border: none;
     cursor: pointer;
+    text-transform: uppercase;
+    color: var(--second-color);
 }
 
-button:hover {
-    background-color: rgba(36,36,36,0.8);
+    button:hover {
+        background-color: rgba(36,36,36,0.8);
+        text-transform: uppercase;
+    }
+
+/* Sections */
+.one {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--second-color);
+}
+
+.container {
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 50%;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: var(--third-color);
+    font-size: 2rem;
+}
+
+.two {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--third-color);
+}
+
+.container2 {
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+form h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #151515;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+form {
+    background: #eaeaea;
+    display:flex ;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 0px;
+}
+form button{
+    margin-top: 20px;
+}
+
+textarea{
+    resize: none;
+}
+form input, form textarea {
+        border: 0;
+        margin: 10px;
+        padding: 20px;
+        outline: none;
+        background: #d9d9d9;
+        font-family: "Montserrat", sans-serif;
+}
+
+form button{
+    padding: 15px;
+    font-size: 18px;
+    max-width: 200px;
+    margin: 2px auto 0;
 }
